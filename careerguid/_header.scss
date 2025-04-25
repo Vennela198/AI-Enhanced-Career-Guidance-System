@@ -1,0 +1,63 @@
+@use "./variables" as *;
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba($bg-color, 0.6);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+  h2 {
+    color: $primary-color;
+  }
+
+  nav > ul,
+  .login {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  a.special {
+    background-color: rgba($bg-color, 0.1);
+    color: $primary-color;
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.3rem;
+    border: 2px solid $primary-color;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      color: #fff;
+      background-color: $primary-color;
+    }
+  }
+}
+
+.dropdown ul {
+  display: none;
+  position: absolute;
+  background-color: $bg-color;
+  padding: 0.4rem;
+  border: 1px solid #ccc;
+}
+
+.dropdown:hover ul {
+  display: block;
+}
+
+.dropdown ul li {
+  padding: 10px;
+
+  &:hover {
+    background-color: #f8f8f8;
+    a {
+      color: $primary-color;
+    }
+  }
+}

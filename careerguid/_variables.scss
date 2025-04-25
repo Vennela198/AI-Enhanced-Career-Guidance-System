@@ -1,0 +1,8 @@
+$bg-color: #3498db;    // Define background color
+$primary-color: #ff5733; // Define primary color
+// _variables.scss
+@mixin heading-style {
+    font-size: 2rem;
+    color: blue;
+    font-weight: bold;
+  }
