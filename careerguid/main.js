@@ -121,3 +121,20 @@ document.addEventListener('DOMContentLoaded', function() {
   // You can add more JavaScript functionality here for other sections
   // like testimonials, footer interactions, etc.
 });
+
+
+async function sendMessage() {
+  const input = document.getElementById("userInput").value;
+  const chatBox = document.getElementById("chatMessages");
+
+  chatBox.innerHTML += `<div class="user-msg">${input}</div>`;
+
+  const res = await fetch("https://your-render-url.onrender.com/chat", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ message: input })
+  });
+
+  const data = await res.json();
+  chatBox.innerHTML += `<div class="bot-msg">${data.reply}</div>`;
+}
